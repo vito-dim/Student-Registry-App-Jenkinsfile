@@ -3,11 +3,6 @@ pipeline {
 
     stages {
         stage('NPM install') {
-            when {
-                not {
-                    branch 'main'
-                }
-            }
             steps {
                 sh 'npm install'
             }
@@ -33,9 +28,6 @@ pipeline {
         }
 
         stage('Push images to repo') {
-            when {
-                branch 'main'
-            }
             steps {
                 script {
                       // Prompt for input approval
@@ -50,9 +42,6 @@ pipeline {
         }
 
         stage('Deploy in render using curl') {
-            when {
-                branch 'main'
-            }
             steps {
                 script {
                       // Prompt for input approval
