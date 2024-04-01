@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: vidraxmax/vidra-app-test
+    ports:
+      - "8081:8081" # Map port 8081 on the host to port 8081 in the container
+    environment:
+      - NODE_ENV=production
